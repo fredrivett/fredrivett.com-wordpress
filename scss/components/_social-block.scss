@@ -1,0 +1,119 @@
+.social-block {
+  position:relative;
+  bottom:0;
+  margin:auto;
+  list-style:none;
+  margin:0;
+  
+  li {
+    display:table;
+    padding:0;
+    list-style-type:none;
+    margin-left:0;
+    float:left;
+    
+    a {
+      display:table-cell;
+      width:3.75em;
+      height:3.75em;
+      text-align:center;
+      vertical-align:middle;
+      padding:0;
+      font-size:2em;
+      background-color:$brand-med-dark;
+      color:#fff;
+    }
+  }
+  
+  .sb-logo {
+    $sb-size:1.3em;
+    
+    display:block;
+    height:$sb-size;
+    
+    svg {
+      display:inline-block;
+      fill:#fff;
+      width:$sb-size;
+      height:$sb-size;
+      vertical-align:top;
+    }
+  }
+}
+
+@media #{$medium-down} {
+  .social-block {
+    li {
+      a {
+        span {
+          display:none;
+        }
+      }
+
+      &.tw a { background-color:#55acee; }
+      &.in a { background-color:#3f729b; }
+      &.vi a { background-color:#44bbff; }
+      &.pi a { background-color:#c8232c; }
+      &.gp a { background-color:#dd4b39; }
+
+/*      &.tw a:before { content:"L"; font-family:'socialico'; }
+      &.in a:before { content:"I"; font-family:'socialico_plus'; }
+      &.vi a:before { content:"V"; font-family:'socialico'; }
+      &.pi a:before { content:"P"; font-family:'socialico_plus'; }
+      &.gp a:before { content:"H"; font-family:'socialico_plus'; }*/
+    }
+  }
+}
+
+@media #{$medium-only} {
+  .social-block {
+    li {
+      a {
+        width:rem-calc(100);
+        height:rem-calc(100);
+        font-size:3.5em;
+      }
+    }
+  }
+}
+
+@media #{$large-up} {
+  .social-block {
+    li {
+      a {
+        width:rem-calc(120);
+        height:rem-calc(120);
+        
+        .sb-logo {
+          display:none;
+        }
+        
+        &:hover {
+          &:before {
+            font-size:2em;
+          }
+
+          .sb-letters {
+            display:none;
+          }
+          
+          .sb-logo {
+            display:block;
+          }
+        }
+      }
+      
+      &.tw a:hover { background-color:#55acee; }
+      &.in a:hover { background-color:#3f729b; }
+      &.vi a:hover { background-color:#44bbff; }
+      &.pi a:hover { background-color:#c8232c; }
+      &.gp a:hover { background-color:#dd4b39; }
+
+/*      &.tw a:hover:before { content:"L"; font-family:'socialico'; }
+      &.in a:hover:before { content:"I"; font-family:'socialico_plus'; }
+      &.vi a:hover:before { content:"V"; font-family:'socialico'; }
+      &.pi a:hover:before { content:"P"; font-family:'socialico_plus'; }
+      &.gp a:hover:before { content:"H"; font-family:'socialico_plus'; }*/
+    }
+  }
+}

@@ -1,0 +1,136 @@
+/**
+ * Header block component
+ *
+ * This block is the main header on my site
+ *
+ * 1)
+ */
+
+.header-block {
+  @include background-size(cover);
+  @include box-shadow(inset 0px 0px 0px 10px rgba(50, 50, 50, 0.05));
+  position: relative;
+  padding: 3rem 0;
+  text-align: center;
+  background-color: $brand-color;
+  background-image: url('../img/fred-bg.jpg');
+
+  &::before, &::after {
+    @include subtle-blue-border;
+  }
+
+  &::before { bottom: 0; }
+  &::after  {    top: 0; }
+
+  @media #{$medium-up} {
+    text-align: left;
+
+    .header-block {
+      padding: 5rem 0;
+
+      .avatar-cont {
+        width: $fr-avatar-size + 2rem;
+        text-align: left;
+      }
+    }
+  }
+
+  @media #{$large-up} {
+    .header-block {
+      .absolute-hor-center {
+        bottom: -3.7rem;
+      }
+    }
+  }
+
+  h1,h2,h3,h4,h5,h6,p {
+    color: #fff;
+  }
+
+  p {
+    @extend .big-p;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.header-block--collapse {
+  padding: 0;
+  margin-top: rem-calc(-10);
+
+  &, * {
+    transition: all map-get($fr-transition, standard) ease;
+  }
+
+  .avatar {
+    position: relative;
+    z-index: 100;
+    margin-bottom: rem-calc(-12);
+  }
+
+  .avatar,
+  .avatar-cont {
+     width: rem-calc(50);
+    height: rem-calc(50);
+  }
+
+  .header-blurb {
+    padding-left: rem-calc(10);
+  }
+
+  h2 {
+    margin-top: rem-calc(15);
+    font-size: $h4-font-size;
+  }
+
+  p {
+    font-size: 0;
+    opacity: 0;
+  }
+
+  &:hover {
+    padding: 3rem 0;
+    margin-top: 0;
+
+    h2 {
+      margin-top: 0;
+      font-size: $h2-font-size;
+    }
+
+    .avatar {
+      margin-bottom: 0;
+    }
+
+    .avatar,
+    .avatar-cont {
+       width: $fr-avatar-size;
+      height: $fr-avatar-size;
+    }
+
+    .header-blurb {
+      padding-left: 1rem;
+    }
+
+    p {
+      font-size: map-get($fr-font-size, medium-large);
+      opacity: 1;
+    }
+  }
+}
+
+  .header-blurb {
+    padding-left: 1rem;
+
+    a {
+      @extend .padded-link;
+      color: $brand-med-dark;
+      background-color: rgba(255,255,255,0.5);
+      @include transition(background-color map-get($fr-transition, standard) ease);
+
+      &:hover {
+        background-color: rgba(255,255,255,1);
+      }
+    }
+  }

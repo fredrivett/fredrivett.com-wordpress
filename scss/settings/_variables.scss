@@ -1,0 +1,19 @@
+$fr-transition: (
+  slow            :         1s,
+  standard        :         0.5s,
+  fast            :         0.1s,
+  faster          :         0.05s,
+);
+
+$subtle-shadow: 0 0 rem-calc(5) 0 rgba(0, 0, 0, 0.1);
+
+$fr-avatar-size: rem-calc(120);
+
+$fr-font-size: (
+  standard        :         $paragraph-font-size,       // 16px
+  medium-large    :         $paragraph-font-size * 1.2, //
+);
+
+$fr-z-index: (
+  header-avatar   :         100,
+);

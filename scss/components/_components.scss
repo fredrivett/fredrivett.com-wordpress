@@ -1,0 +1,142 @@
+.avatar {
+  width: $fr-avatar-size;
+  height: $fr-avatar-size;
+  @include border-radius(50%);
+  // margin-bottom: 1rem;
+}
+
+
+
+
+.link-block {
+  &:hover {
+    background-color: $anchor-font-color;
+    color: #fff;
+  }
+}
+
+
+
+
+
+
+.writing-block {
+  padding: 8rem 0 2rem;
+
+  .columns {
+    position: relative;
+    border: rem-calc(10) solid #f2f2f2;
+    padding-top: 3rem;
+    padding-bottom: 2rem;
+  }
+
+  h2 {
+    position: relative;
+    z-index: 10;
+  }
+
+  a {
+    &:hover {
+      padding: 0.25em;
+      margin-left: -0.25em; margin-right: -0.25em;
+      color: #fff;
+      background-color: $anchor-font-color;
+    }
+  }
+}
+
+.want-more-cont {
+  @extend .absolute-hor-center;
+  bottom: -1.5em;
+
+  a {
+    background-color: #fff;
+    font-size: rem-calc(18);
+    font-style: italic;
+
+    &, &:hover {
+      padding: 0.5rem 1rem;
+      margin-left: -0.5em; margin-right: -0.5em;
+    }
+  }
+}
+
+.recent-posts {
+  @extend .spaced-list;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+
+  li {
+    > *:nth-child(n+2):not(:last-child) {
+      &:after {
+        content: '\00a0\007C';
+        display: inline-block;
+        color: #ccc;
+        margin: 0 0.25em 0 0.35em;
+      }
+    }
+  }
+}
+
+.main-footer {
+  position: relative;
+  padding: 7rem 0rem 2rem;
+  background: #0172f6 url('../img/pattern_maze.png') repeat;
+  color: #fff;
+
+  &:before {
+    @include subtle-blue-border;
+    top: 0;
+  }
+
+  .absolute-hor-center {
+    top: -3.7rem;
+    z-index: 10;
+
+    a {
+      border: none;
+    }
+  }
+
+  a {
+    @extend .link-white;
+  }
+}
+
+@media #{$medium-only} {
+
+  .main-footer {
+    .absolute-hor-center {
+      top: -2.9rem;
+    }
+  }
+
+}
+
+@media #{$medium-up} {
+
+  $fr-avatar-size: rem-calc(180);
+  @include border-radius(50%);
+
+  .avatar {
+    width: $fr-avatar-size;
+    height: $fr-avatar-size;
+    margin-bottom: 0;
+  }
+
+}
+
+/* retina */
+@media
+only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (   min--moz-device-pixel-ratio: 2),
+only screen and (     -o-min-device-pixel-ratio: 2/1),
+only screen and (        min-device-pixel-ratio: 2),
+only screen and (                min-resolution: 192dpi),
+only screen and (                min-resolution: 2dppx) {
+
+  .main-footer {
+    background-image: url('../img/pattern_maze-2x.png');
+  }
+
+}
